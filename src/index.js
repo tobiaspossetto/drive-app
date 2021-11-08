@@ -4,10 +4,6 @@ const path = require('path');
 const multer = require('multer')
 const Cloudinary = require('cloudinary');
 
-
-
-
-
 if(process.env.NODE_ENV !== 'production'){
     require('dotenv').config()
 }
