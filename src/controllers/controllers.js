@@ -16,14 +16,14 @@ const Controllers  =  {
         await newPhoto.save()
         await fs.unlink(req.file.path)
       
-        res.send('hello')
+        res.send('ok').status(200)
     },
 
     //get
     async GetFiles (req, res) {
-        const photos = await Photo.find()
-        console.log(photos)
-        res.send('hello')
+        const response = await Photo.find()
+        console.log(response)
+        res.send(response).status(200)
     },
 
     //delete 
@@ -35,7 +35,7 @@ const Controllers  =  {
         const result = await Cloudinary.v2.uploader.destroy(response.public_id)
         console.log('--------------------------')
         console.log(result)
-        res.send('Eliminado')
+        res.send('Eliminado').status(200)
     }
 }
 
